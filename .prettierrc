@@ -1,0 +1,23 @@
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "avoid",
+  "proseWrap": "never",
+  "htmlWhitespaceSensitivity": "strict",
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "*.svelte",
+      "options": {
+        "parser": "html",
+        "svelteSortOrder": "markup-scripts-styles",
+        "svelteStrictMode": true
+      }
+    }
+  ]
+}
