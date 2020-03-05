@@ -1,0 +1,12 @@
+/build/bundle.js
+  Content-Type: text/javascript; charset=utf-8
+
+/manifest.webmanifest
+  Content-Type: application/manifest.webmanifest; charset=utf-8
+
+/favicon.ico
+  Content-Type: image/x-icon
+
+/*
+  Cache-Control: no-cache
+  X-Content-Type-Options: nosniff

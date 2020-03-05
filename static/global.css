@@ -1,36 +1,206 @@
-body {
-	margin: 0;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
-	color: #333;
+:root {
+  /* Fonts */
+  --font-header: "Lobster", serif;
+  --font-body: "Open Sans", sans-serif;
+
+  /* Colors */
+  --black1: hsla(0, 0%, 0%, 0.1);
+  --black2: hsla(0, 0%, 0%, 0.2);
+  --black3: hsla(0, 0%, 0%, 0.3);
+  --black4: hsla(0, 0%, 0%, 0.4);
+  --black5: hsla(0, 0%, 0%, 0.5);
+  --black6: hsla(0, 0%, 0%, 0.6);
+  --black7: hsla(0, 0%, 0%, 0.7);
+  --black8: hsla(0, 0%, 0%, 0.8);
+  --black9: hsla(0, 0%, 0%, 0.9);
+  --black: hsla(0, 0%, 0%, 1);
+  --white1: hsla(0, 0%, 100%, 0.1);
+  --white2: hsla(0, 0%, 100%, 0.2);
+  --white3: hsla(0, 0%, 100%, 0.3);
+  --white4: hsla(0, 0%, 100%, 0.4);
+  --white5: hsla(0, 0%, 100%, 0.5);
+  --white6: hsla(0, 0%, 100%, 0.6);
+  --white7: hsla(0, 0%, 100%, 0.7);
+  --white8: hsla(0, 0%, 100%, 0.8);
+  --white9: hsla(0, 0%, 100%, 0.9);
+  --white: hsla(0, 0%, 100%, 1);
+  --color1: hsla(300, 100%, 10%, 1);
+  --color2: hsla(300, 100%, 25%, 1);
+  --color3: hsla(300, 100%, 32%, 1);
+  --color4: hsla(300, 100%, 40%, 1);
+  --color5: hsla(300, 100%, 50%, 1);
+  --color6: hsla(300, 100%, 60%, 1);
+  --color7: hsla(300, 100%, 70%, 1);
+  --color8: hsla(300, 100%, 80%, 1);
+  --color9: hsla(300, 100%, 90%, 1);
+  --color: var(--color5);
+  --accent1: hsla(193, 95%, 80%, 1);
+  --accent2: hsla(193, 95%, 70%, 1);
+  --accent3: hsla(193, 95%, 60%, 1);
+  --accent4: hsla(193, 95%, 50%, 1);
+  --accent5: hsla(193, 95%, 40%, 1);
+  --accent: var(--accent3);
+  --warn1: hsla(5, 100%, 80%, 1);
+  --warn2: hsla(5, 100%, 65%, 1);
+  --warn3: hsla(5, 100%, 50%, 1);
+  --warn4: hsla(5, 100%, 35%, 1);
+  --warn5: hsla(5, 100%, 20%, 1);
+  --warn: var(--warn3);
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0 0 0.5em 0;
-	font-weight: 400;
-	line-height: 1.2;
+:root * {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--black7);
+  color: var(--white1);
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color);
+  border-color: var(--color);
+  font-weight: normal;
+  font-style: normal;
+  margin: 0.9em auto 0.1em auto;
+  padding: 0;
+  text-shadow: 2px 2px 4px var(--black3);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-header);
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 h1 {
-	font-size: 2em;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin: 0.1em auto 0.9em auto;
 }
 
 a {
-	color: inherit;
+  color: var(--accent2);
+  text-decoration: none;
 }
 
-code {
-	font-family: menlo, inconsolata, monospace;
-	font-size: calc(1em - 2px);
-	color: #555;
-	background-color: #f0f0f0;
-	padding: 0.2em 0.4em;
-	border-radius: 2px;
+a:visited {
+  color: var(--accent2);
 }
 
-@media (min-width: 400px) {
-	body {
-		font-size: 16px;
-	}
+a:hover {
+  color: var(--accent1);
+  text-decoration: underline;
+}
+
+label {
+  display: block;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.4em;
+  margin: 0 0 0.5em 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+input:disabled {
+  color: #ccc;
+}
+
+input[type="range"] {
+  height: 0;
+}
+
+button {
+  color: #333;
+  background-color: #f4f4f4;
+  outline: none;
+}
+
+button:active {
+  background-color: #ddd;
+}
+
+button:focus {
+  border-color: #666;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 1em auto 2em;
+  background-color: var(--dark2);
+  padding: 1em 1.25em;
+  border: 0.1em solid var(--white1);
+  border-radius: 2em;
+  box-shadow: 0.5em 0.75em 0.25em 0.25em var(--black2);
+  line-height: 2em;
+}
+
+blockquote > * {
+  text-indent: 4ch;
+  margin: 0;
+  padding: 0;
+}
+
+blockquote > *:first-child {
+  text-indent: 0;
 }
