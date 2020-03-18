@@ -1,21 +1,21 @@
 <footer>
-  <div>
-    <img src="{logo}" alt="Affable Ally Logo" />
-    <div class="credits">
-      <p class="inline">
-        The
-        <i>Affable Ally Podcast</i>
-        is produced by Matthew McMahon.
-      </p>
-      <p class="inline">
-        Website design by
-        <a href="https://affable.dev">Matthew McMahon</a>
-        .
-      </p>
-      <p class="block">Copyright © 2019 Matthew McMahon, All Rights Reserved</p>
-    </div>
+  <img class="logo" src="{logo}" alt="Affable Ally Logo" />
+  <ul class="credits">
+    <li class="inline">
+      The
+      <i>Affable Ally Podcast</i>
+      is produced by Matthew McMahon.
+    </li>
+    <li class="inline">
+      Website design by
+      <a href="https://affable.dev">Matthew McMahon</a>
+      .
+    </li>
+  </ul>
+  <p class="copyright">Copyright © 2019 Matthew McMahon, All Rights Reserved</p>
+  <div class="nav">
+    <FooterNav {segment} />
   </div>
-  <FooterNav {segment} />
 </footer>
 
 <script>
@@ -27,15 +27,17 @@
 <style>
   footer {
     border-top: 1px solid var(--white5);
-    color: var(--white);
     background-color: var(--black8);
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    flex: 0 0 max-content;
+    color: var(--white);
     font-size: 0.8rem;
     padding: 1rem 1ch;
+    /* align-items: center; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* flex-wrap: wrap-reverse; */
+    /* flex: 0 0 max-content; */
+    display: grid;
+    grid-template: "logo credits nav" "logo copyright nav";
   }
 
   footer > div {
@@ -43,21 +45,41 @@
     display: flex;
   }
 
+  .logo {
+    grid-area: logo;
+    flex: 0 0 content;
+    align-self: center;
+    justify-self: center;
+    max-height: 3rem;
+    width: auto;
+    margin-right: 1ch;
+  }
+
   .credits {
+    grid-area: credits;
+  }
+
+  .credits,
+  .copyright {
     opacity: 0.25;
-  }
-
-  .credits:hover {
-    opacity: 1;
-  }
-
-  .inline,
-  .block {
     margin: 0;
     padding: 0;
     font-size: inherit;
     line-height: 1rem;
     white-space: nowrap;
+  }
+
+  .credits:hover,
+  .copyright:hover {
+    opacity: 1;
+  }
+
+  .nav {
+    grid-area: nav;
+  }
+
+  .copyright {
+    grid-area: copyright;
   }
 
   a {
@@ -67,15 +89,6 @@
 
   a:hover {
     color: var(--accent1);
-  }
-
-  img {
-    flex: 0 0 content;
-    align-self: center;
-    justify-self: center;
-    max-height: 3rem;
-    width: auto;
-    margin-right: 1ch;
   }
 
   @media only screen and (max-width: 800px) {

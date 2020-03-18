@@ -1,22 +1,39 @@
-<script>
-  import Nav from "src/components/Nav.svelte";
+<ScreenReader />
+<header id="top">
+  <AppLogo />
+  <HeaderNav {segment} />
+</header>
+<main id="main">
+  <article>
+    <slot />
+  </article>
+</main>
+<AppFooter {segment} />
 
-  export let segment;
+<script>
+  import AppLogo from "src/components/header-logo.svelte"
+  import AppFooter from "src/components/footer.svelte"
+  import HeaderNav from "src/components/header-navigation.svelte"
+  import FooterNav from "src/components/footer-navigation.svelte"
+  import ScreenReader from "src/components/a11y/screen-reader.svelte"
+  export let segment
+  console.info(`segment is ${segment}`)
 </script>
 
 <style>
   main {
-    position: relative;
-    max-width: 56em;
-    background-color: white;
-    padding: 2em;
+    background-color: var(--black5);
+    color: var(--white9);
+    padding: 0.25em;
+    flex: 1 1 auto;
+  }
+  article {
+    width: 800px;
+    max-width: 80vw;
     margin: 0 auto;
-    box-sizing: border-box;
+  }
+  header {
+    background-color: var(--black8);
+    color: var(--white8);
   }
 </style>
-
-<Nav {segment} />
-
-<main>
-  <slot />
-</main>

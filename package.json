@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "affableally.com",
+  "description": "Website for the Affable Ally Podcast!",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
