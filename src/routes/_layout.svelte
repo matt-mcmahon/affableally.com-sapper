@@ -21,6 +21,12 @@
 </script>
 
 <style>
+  :global(#sapper) {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
   main {
     background-color: var(--black5);
     color: var(--white9);
