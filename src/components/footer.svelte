@@ -1,21 +1,22 @@
 <footer>
   <img class="logo" src="{logo}" alt="Affable Ally Logo" />
   <ul class="credits">
-    <li class="inline">
-      The
+    <li class="line">
+      the
       <i>Affable Ally Podcast</i>
-      is produced by Matthew McMahon.
+      is produced by Matthew McMahon
     </li>
-    <li class="inline">
-      Website design by
+    <li class="line">
+      with website design by
       <a href="https://affable.dev">Matthew McMahon</a>
-      .
     </li>
   </ul>
-  <p class="copyright">Copyright © 2019 Matthew McMahon, All Rights Reserved</p>
-  <div class="nav">
+  <p class="copyright line">
+    Copyright © 2019 Matthew McMahon, All Rights Reserved
+  </p>
+  <nav class="nav">
     <FooterNav {segment} />
-  </div>
+  </nav>
 </footer>
 
 <script>
@@ -30,19 +31,35 @@
     background-color: var(--black8);
     color: var(--white);
     font-size: 0.8rem;
-    padding: 1rem 1ch;
-    /* align-items: center; */
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* flex-wrap: wrap-reverse; */
-    /* flex: 0 0 max-content; */
+    padding: 1rem;
     display: grid;
-    grid-template: "logo credits nav" "logo copyright nav";
+    grid-template-areas:
+      "logo credits nav"
+      "logo copyright nav";
+    grid-template-columns: min-content 1fr 1fr;
+    column-gap: 0.5rem;
+    align-items: center;
   }
 
-  footer > div {
+  li {
+    display: block;
+    text-align: inherit;
+  }
+
+  .logo,
+  .credits li,
+  .nav {
     margin: var(--footer-margin);
-    display: flex;
+  }
+
+  .credits li,
+  .copyright {
+    opacity: 0.25;
+  }
+
+  .credits li:hover,
+  .copyright:hover {
+    opacity: 1;
   }
 
   .logo {
@@ -61,17 +78,11 @@
 
   .credits,
   .copyright {
-    opacity: 0.25;
     margin: 0;
     padding: 0;
     font-size: inherit;
     line-height: 1rem;
     white-space: nowrap;
-  }
-
-  .credits:hover,
-  .copyright:hover {
-    opacity: 1;
   }
 
   .nav {
@@ -92,15 +103,31 @@
   }
 
   @media only screen and (max-width: 800px) {
-    .inline {
+    footer {
+      grid-template-areas:
+        "logo credits   nav"
+        "logo copyright nav";
+      grid-template-columns: min-content 3fr min-content;
+    }
+
+    .credits li {
       display: inline;
     }
-    .inline,
-    .block {
+
+    .credits,
+    .copyright {
+      margin: 0;
+      padding: 0;
+      font-size: inherit;
+      line-height: 1rem;
       white-space: normal;
+      text-align: end;
     }
-    .block {
-      margin-top: 0.25rem;
+    li {
+      text-align: start;
+    }
+    .credits li {
+      text-align: end;
     }
   }
 </style>

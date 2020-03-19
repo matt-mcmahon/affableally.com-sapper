@@ -1,19 +1,17 @@
-<nav>
-  <ul>
-    {#each links as { aria, href, label, rel }}
-      <li>
-        <a aria-current="{aria}" {href} {rel}>
-          <span>{label}</span>
-        </a>
-      </li>
-    {/each}
+<ul>
+  {#each links as { aria, href, label, rel }}
     <li>
-      <a href="#top">
-        <span>Top</span>
+      <a aria-current="{aria}" {href} {rel}>
+        <span>{label}</span>
       </a>
     </li>
-  </ul>
-</nav>
+  {/each}
+  <li>
+    <a href="#top">
+      <span>Top</span>
+    </a>
+  </li>
+</ul>
 
 <script>
   import { getNavLinks } from "src/routes/_routes.mjs"
@@ -22,11 +20,6 @@
 </script>
 
 <style>
-  nav {
-    padding: 0;
-    margin: var(--footer-margin);
-  }
-
   ul {
     display: flex;
     flex-flow: row wrap;
@@ -39,7 +32,7 @@
     flex: 1 1;
     margin: 0;
     padding: 0.25em;
-    text-align: center;
+    text-align: inherit;
   }
 
   a {
